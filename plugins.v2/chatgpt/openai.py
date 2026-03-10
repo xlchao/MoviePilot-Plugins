@@ -31,12 +31,12 @@ class OpenAi:
         if self._api_key and self._api_url:
             base_url = self._api_url if compatible else self._api_url + "/v1"
             http_client = None
+            logger.info(f"ChatGPT插件加载baseurl: {base_url} ")
             if proxy and proxy.get("https"):
                 import httpx
                 proxy_url = proxy.get("https")
                 # httpx 支持字符串格式的代理 URL
                 http_client = httpx.Client(proxies=proxy_url, timeout=60.0)
-                logger.info(f"ChatGPT插件加载baseurl: {base_url} ")
             self._client = openai.OpenAI(
                 api_key=self._api_key,
                 base_url=base_url,
