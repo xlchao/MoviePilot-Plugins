@@ -11,7 +11,7 @@ from app.schemas import NotificationType
 
 class ChatGPT(_PluginBase):
     # 插件名称
-    plugin_name = "ChatGPT"
+    plugin_name = "XChatGPT"
     # 插件描述
     plugin_desc = "大模型对话与媒体识别增强。"
     # 插件图标
@@ -19,11 +19,11 @@ class ChatGPT(_PluginBase):
     # 插件版本
     plugin_version = "2.1.8"
     # 插件作者
-    plugin_author = "jxxghp"
+    plugin_author = "xlchao"
     # 作者主页
-    author_url = "https://github.com/jxxghp"
+    author_url = "https://github.com/xlchao"
     # 插件配置项ID前缀
-    plugin_config_prefix = "chatgpt_"
+    plugin_config_prefix = "xchatgpt_"
     # 加载顺序
     plugin_order = 15
     # 可使用的用户级别

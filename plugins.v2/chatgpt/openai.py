@@ -5,6 +5,7 @@ from typing import List, Union
 
 import openai
 from cacheout import Cache
+from app.log import logger
 
 OpenAISessionCache = Cache(maxsize=100, ttl=3600, timer=time.time, default=None)
 
@@ -35,6 +36,7 @@ class OpenAi:
                 proxy_url = proxy.get("https")
                 # httpx 支持字符串格式的代理 URL
                 http_client = httpx.Client(proxies=proxy_url, timeout=60.0)
+                logger.info(f"ChatGPT插件加载baseurl: {base_url} ")
             self._client = openai.OpenAI(
                 api_key=self._api_key,
                 base_url=base_url,
