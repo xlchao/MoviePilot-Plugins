@@ -17,7 +17,7 @@ class ChatGPT(_PluginBase):
     # 插件图标
     plugin_icon = "Chatgpt_A.png"
     # 插件版本
-    plugin_version = "2.1.9"
+    plugin_version = "2.1.10"
     # 插件作者
     plugin_author = "xlchao"
     # 作者主页
@@ -60,6 +60,7 @@ class ChatGPT(_PluginBase):
             self._model = config.get("model")
             self._notify = config.get("notify")
             self._customize_prompt = config.get("customize_prompt")
+            logger.info(f"ChatGPTopenai_ur了 {self._openai_url} ")
             # 处理多个API密钥
             if self._openai_key:
                 self._api_keys = [key.strip() for key in self._openai_key.split(',') if key.strip()]
